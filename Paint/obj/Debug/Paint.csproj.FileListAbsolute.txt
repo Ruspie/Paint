@@ -1,1 +1,9 @@
 D:\BSUIR\ООТПиСП\lab\Paint\Paint\bin\Debug\Paint.exe.config
+D:\BSUIR\ООТПиСП\lab\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
+D:\BSUIR\ООТПиСП\lab\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
+D:\BSUIR\ООТПиСП\lab\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
+D:\BSUIR\ООТПиСП\lab\Paint\Paint\bin\Debug\Paint.exe
+D:\BSUIR\ООТПиСП\lab\Paint\Paint\bin\Debug\Paint.pdb
+D:\BSUIR\ООТПиСП\lab\Paint\Paint\obj\Debug\Paint.exe
+D:\BSUIR\ООТПиСП\lab\Paint\Paint\obj\Debug\Paint.pdb
+D:\BSUIR\ООТПиСП\lab\Paint\Paint\obj\Debug\Paint.PaintForm.resources
