@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Classes\DrawingShapes.cs" />
     <Compile Include="Classes\Figures\Ellipse.cs" />
+    <Compile Include="Classes\Figures\Rectangleq.cs" />
     <Compile Include="Classes\Figures\Shape.cs" />
     <Compile Include="PaintForm.cs">
       <SubType>Form</SubType>

@@ -41,13 +41,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form
+            // PaintForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 289);
             this.Controls.Add(this.button1);
-            this.Name = "Form";
+            this.Name = "PaintForm";
             this.Text = "Бегун А.С. гр.451001";
             this.ResumeLayout(false);
 

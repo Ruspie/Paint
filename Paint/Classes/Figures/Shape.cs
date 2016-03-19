@@ -9,6 +9,6 @@ namespace Paint.Classes
 {
     abstract class Shape
     {
-        public Color  color { get; set;}
+        public Color  Color { get; set;}
     }
 }

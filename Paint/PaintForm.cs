@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Paint.Classes;
+using Paint.Classes.Figures;
 
 namespace Paint
 {
@@ -20,8 +21,10 @@ namespace Paint
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var _ellipse = new Ellipse(new Point(50, 50), 25, 25, Color.Blue);
-            DrawingShapes.Draw(_ellipse);
+            var ellipse = new Ellipse(new Point(50, 50), 100, 100, Color.Blue);
+            DrawingShapes.Draw(ellipse);
+            var rectangle = new Rectangleq(new Point(50, 50), 50, 70, Color.Firebrick);
+            DrawingShapes.Draw(rectangle);
         }
     }
 }
