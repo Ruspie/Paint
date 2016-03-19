@@ -49,6 +49,8 @@
             this.Controls.Add(this.buttonDraw);
             this.Name = "PaintForm";
             this.Text = "Бегун А.С. гр.451001";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PaintForm_MouseDown);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PaintForm_MouseUp);
             this.ResumeLayout(false);
 
         }

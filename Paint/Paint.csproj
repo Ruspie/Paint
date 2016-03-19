@@ -50,7 +50,7 @@
     <Compile Include="Classes\Figures\Ellipse.cs" />
     <Compile Include="Classes\Figures\Line.cs" />
     <Compile Include="Classes\Figures\Polyline.cs" />
-    <Compile Include="Classes\Figures\Rectangleq.cs" />
+    <Compile Include="Classes\Figures\Rectangle.cs" />
     <Compile Include="Classes\Figures\Shape.cs" />
     <Compile Include="Classes\Figures\Triangle.cs" />
     <Compile Include="PaintForm.cs">
@@ -73,6 +73,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
