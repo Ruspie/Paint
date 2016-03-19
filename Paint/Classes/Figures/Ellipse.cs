@@ -9,8 +9,7 @@ namespace Paint.Classes
 {
     internal class Ellipse: Shape
     {
-        private readonly Point _centerPoint;
-
+        private readonly Point _centerPoint; 
         public Ellipse(Point centerPoint, float radiusX, float radiusY, Color color)
         {
             this._centerPoint = centerPoint;
