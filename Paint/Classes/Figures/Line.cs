@@ -10,17 +10,15 @@ namespace Paint.Classes.Figures
 {
     internal class Line: Shape
     {
-        private readonly Point _firstPoint;
-        private readonly Point _secondPoint;
-
         public Line(Point firstPoint, Point secondPoint, Color color)
         {
-            this._firstPoint = firstPoint;
-            this._secondPoint = secondPoint;
+            this.GetFirstPoint = firstPoint;
+            this.GetSecondPoint = secondPoint;
             this.Color = color;
         }
 
-        public Point GetFirstPoint => _firstPoint;
-        public Point GetSecondPoint => _secondPoint;
+        public Point GetFirstPoint { get; }
+
+        public Point GetSecondPoint { get; }
     }
 }
