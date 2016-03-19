@@ -9,18 +9,21 @@ namespace Paint.Classes.Figures
 {
     internal class Triangle: Shape
     {
+        private readonly Point _firstPoint;
+        private readonly Point _secondPoint;
+        private readonly Point _thirdPoint;
+
         public Triangle(Point firstPoint, Point secondPoint, Point thirdPoint, Color color)
         {
-            this.GetFirstPoint = firstPoint;
-            this.GetSecondPoint = secondPoint;
-            this.GetThirdPoint = thirdPoint;
+            this._firstPoint = firstPoint;
+            this._secondPoint = secondPoint;
+            this._thirdPoint = thirdPoint;
             this.Color = color;
         }
 
-        public Point GetFirstPoint { get; }
+        public Point GetFirstPoint => _firstPoint;
+        public Point GetSecondPoint => _secondPoint;
+        public Point GetThirdPoint => _thirdPoint;
 
-        public Point GetSecondPoint { get; }
-
-        public Point GetThirdPoint { get; }
     }
 }

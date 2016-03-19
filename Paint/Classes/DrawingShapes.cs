@@ -36,6 +36,15 @@ namespace Paint.Classes
             FormGraphics.DrawLine(penColor, line.GetFirstPoint, line.GetSecondPoint);
         }
 
+        public static void Draw(Polyline polyline)
+        {
+            foreach (var line in polyline.Lines)
+            {
+                var penColor = new Pen(line.Color, PenWidth);
+                FormGraphics.DrawLine(penColor, line.GetFirstPoint, line.GetSecondPoint);
+            }
+        }
+
         public static void Draw(Triangle triangle)
         {
             var penColor = new Pen(triangle.Color, PenWidth);
