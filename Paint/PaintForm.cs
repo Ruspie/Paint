@@ -25,6 +25,10 @@ namespace Paint
             DrawingShapes.Draw(ellipse);
             var rectangle = new Rectangleq(new Point(50, 50), 50, 70, Color.Firebrick);
             DrawingShapes.Draw(rectangle);
+            var line = new Line(new Point(50, 50), new Point(100, 100), Color.Black);
+            DrawingShapes.Draw(line);
+            var triangle = new Triangle(new Point(50, 50), new Point(125, 100), new Point(75, 145), Color.Coral);
+            DrawingShapes.Draw(triangle);
         }
     }
 }
