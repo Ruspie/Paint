@@ -11,16 +11,16 @@ namespace Paint.Classes
     {
         public Ellipse(Point centerPoint, float radiusX, float radiusY, Color color)
         {
-            this.GetCenterPoint = centerPoint;
-            this.GetRadiusX = radiusX;
-            this.GetRadiusY = radiusY;
+            this.CenterPoint = centerPoint;
+            this.RadiusX = radiusX;
+            this.RadiusY = radiusY;
             this.Color = color;
         }
 
-        public Point GetCenterPoint { get; }
+        public Point CenterPoint { get; }
 
-        public float GetRadiusX { get; }
+        public float RadiusX { get; }
 
-        public float GetRadiusY { get; }
+        public float RadiusY { get; }
     }
 }

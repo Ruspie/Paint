@@ -12,13 +12,13 @@ namespace Paint.Classes.Figures
     {
         public Line(Point firstPoint, Point secondPoint, Color color)
         {
-            this.GetFirstPoint = firstPoint;
-            this.GetSecondPoint = secondPoint;
+            this.FirstPoint = firstPoint;
+            this.SecondPoint = secondPoint;
             this.Color = color;
         }
 
-        public Point GetFirstPoint { get; }
+        public Point FirstPoint { get; }
 
-        public Point GetSecondPoint { get; }
+        public Point SecondPoint { get; }
     }
 }

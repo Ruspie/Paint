@@ -11,16 +11,16 @@ namespace Paint.Classes.Figures
     {
         public Rectangle(Point topLeftPoint, float width, float heigth, Color color)
         {
-            this.GetTopLeftPoint = topLeftPoint;
-            this.GetWidth = width;
-            this.GetHeigth = heigth;
+            this.TopLeftPoint = topLeftPoint;
+            this.Width = width;
+            this.Heigth = heigth;
             this.Color = color;
         }
 
-        public Point GetTopLeftPoint { get; }
+        public Point TopLeftPoint { get; }
 
-        public float GetWidth { get; }
+        public float Width { get; }
 
-        public float GetHeigth { get; }
+        public float Heigth { get; }
     }
 }

@@ -9,60 +9,63 @@ using Paint.Classes.Figures;
 
 namespace Paint.Classes
 {
-    internal static class DrawingShapes
+    internal class DrawingShapes
     {
-        public const int PenWidth = 2;
-        private static readonly Form DrawingForm = Form.ActiveForm;
-        private static readonly Graphics FormGraphics = DrawingForm.CreateGraphics();
-
-        public static void Draw(Ellipse ellipse)
+        private const int PenWidth = 2;
+        private readonly Graphics FormGraphics;
+        
+        public DrawingShapes(Form formGraphics)
+        {
+            FormGraphics = formGraphics.CreateGraphics();
+        }
+        public void Draw(Ellipse ellipse)
         {
             var penColor = new Pen(ellipse.Color, PenWidth);
-            FormGraphics.DrawEllipse(penColor, ellipse.GetCenterPoint.X, ellipse.GetCenterPoint.Y, ellipse.GetRadiusX, ellipse.GetRadiusY);
+            FormGraphics.DrawEllipse(penColor, ellipse.CenterPoint.X, ellipse.CenterPoint.Y, ellipse.RadiusX, ellipse.RadiusY);
         }
 
-        public static void Draw(Figures.Rectangle rectangle)
+        public void Draw(Figures.Rectangle rectangle)
         {
             var penColor = new Pen(rectangle.Color, PenWidth);
-            FormGraphics.DrawLine(penColor, rectangle.GetTopLeftPoint.X, rectangle.GetTopLeftPoint.Y, 
-                rectangle.GetTopLeftPoint.X, rectangle.GetTopLeftPoint.Y + rectangle.GetHeigth);
-            FormGraphics.DrawLine(penColor, rectangle.GetTopLeftPoint.X, rectangle.GetTopLeftPoint.Y,
-                rectangle.GetTopLeftPoint.X + rectangle.GetWidth, rectangle.GetTopLeftPoint.Y);
-            FormGraphics.DrawLine(penColor, rectangle.GetTopLeftPoint.X + rectangle.GetWidth, rectangle.GetTopLeftPoint.Y,
-                rectangle.GetTopLeftPoint.X + rectangle.GetWidth, rectangle.GetTopLeftPoint.Y + rectangle.GetHeigth);
-            FormGraphics.DrawLine(penColor, rectangle.GetTopLeftPoint.X, rectangle.GetTopLeftPoint.Y + rectangle.GetHeigth,
-                rectangle.GetTopLeftPoint.X + rectangle.GetWidth, rectangle.GetTopLeftPoint.Y + rectangle.GetHeigth);
+            FormGraphics.DrawLine(penColor, rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y, 
+                rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y + rectangle.Heigth);
+            FormGraphics.DrawLine(penColor, rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y,
+                rectangle.TopLeftPoint.X + rectangle.Width, rectangle.TopLeftPoint.Y);
+            FormGraphics.DrawLine(penColor, rectangle.TopLeftPoint.X + rectangle.Width, rectangle.TopLeftPoint.Y,
+                rectangle.TopLeftPoint.X + rectangle.Width, rectangle.TopLeftPoint.Y + rectangle.Heigth);
+            FormGraphics.DrawLine(penColor, rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y + rectangle.Heigth,
+                rectangle.TopLeftPoint.X + rectangle.Width, rectangle.TopLeftPoint.Y + rectangle.Heigth);
         }
 
-        public static void Draw(Line line)
+        public void Draw(Line line)
         {
             var penColor = new Pen(line.Color, PenWidth);
-            FormGraphics.DrawLine(penColor, line.GetFirstPoint, line.GetSecondPoint);
+            FormGraphics.DrawLine(penColor, line.FirstPoint, line.SecondPoint);
         }
 
-        public static void Draw(Polyline polyline)
+        public void Draw(Polyline polyline)
         {
             foreach (var line in polyline.Lines)
             {
                 var penColor = new Pen(line.Color, PenWidth);
-                FormGraphics.DrawLine(penColor, line.GetFirstPoint, line.GetSecondPoint);
+                FormGraphics.DrawLine(penColor, line.FirstPoint, line.SecondPoint);
             }
         }
 
-        public static void Draw(Triangle triangle)
+        public void Draw(Triangle triangle)
         {
             var penColor = new Pen(triangle.Color, PenWidth);
-            FormGraphics.DrawLine(penColor, triangle.GetFirstPoint, triangle.GetSecondPoint);
-            FormGraphics.DrawLine(penColor, triangle.GetSecondPoint, triangle.GetThirdPoint);
-            FormGraphics.DrawLine(penColor, triangle.GetFirstPoint, triangle.GetThirdPoint);
+            FormGraphics.DrawLine(penColor, triangle.FirstPoint, triangle.SecondPoint);
+            FormGraphics.DrawLine(penColor, triangle.SecondPoint, triangle.ThirdPoint);
+            FormGraphics.DrawLine(penColor, triangle.FirstPoint, triangle.ThirdPoint);
         }
 
-        public static void DrawingListShape(List<Shape> listShape)
+        public void DrawingListShape(List<Shape> listShape)
         {
             foreach (var shape in listShape)
             {
                 dynamic shapeToDraw = shape;
-                DrawingShapes.Draw(shapeToDraw);
+                Draw(shapeToDraw);
             }
         }
     }

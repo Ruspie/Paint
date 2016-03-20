@@ -11,16 +11,16 @@ namespace Paint.Classes.Figures
     {
         public Triangle(Point firstPoint, Point secondPoint, Point thirdPoint, Color color)
         {
-            this.GetFirstPoint = firstPoint;
-            this.GetSecondPoint = secondPoint;
-            this.GetThirdPoint = thirdPoint;
+            this.FirstPoint = firstPoint;
+            this.SecondPoint = secondPoint;
+            this.ThirdPoint = thirdPoint;
             this.Color = color;
         }
 
-        public Point GetFirstPoint { get; }
+        public Point FirstPoint { get; }
 
-        public Point GetSecondPoint { get; }
+        public Point SecondPoint { get; }
 
-        public Point GetThirdPoint { get; }
+        public Point ThirdPoint { get; }
     }
 }
