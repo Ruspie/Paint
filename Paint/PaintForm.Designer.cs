@@ -157,6 +157,7 @@
             this.Name = "PaintForm";
             this.Text = "Бегун А.С. гр.451001";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PaintForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PaintForm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PaintForm_MouseUp);
             this.groupBoxSettings.ResumeLayout(false);
             this.groupBoxColor.ResumeLayout(false);

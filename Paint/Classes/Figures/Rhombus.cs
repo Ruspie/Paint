@@ -18,6 +18,8 @@ namespace Paint.Classes.Figures
             this.FourthPoint = fourthPoint;
         }
 
+        public Rhombus() { }
+
         public Point FirstPoint { get; }
         public Point SecondPoint { get; }
         public Point ThirdPoint { get; }

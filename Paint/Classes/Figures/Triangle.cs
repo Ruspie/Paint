@@ -17,6 +17,8 @@ namespace Paint.Classes.Figures
             this.Color = color;
         }
 
+        public Triangle() { }
+
         public Point FirstPoint { get; }
 
         public Point SecondPoint { get; }

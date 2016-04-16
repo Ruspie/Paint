@@ -17,6 +17,8 @@ namespace Paint.Classes
             this.Color = color;
         }
 
+        public Ellipse() { }
+
         public Point TopLeftPoint { get; }
 
         public float Width { get; }

@@ -12,35 +12,25 @@ namespace Paint.Classes
 {
     class CreatorShapes
     {
-        //public Point CreatePoint(Point _point, Color color)
-        //{
-        //    var point = new Point(_point.X, _point.Y) {Color = color};
-        //    return point;
-        //}
-
-        public Line CreateLine(Point pointA, Point pointB, Color color)
+        private Line Create(Line line, Point pointA, Point pointB, Color color)
         {
-            var line = new Line(pointA, pointB, color);
-            return line;
+            return new Line(pointA, pointB, color);
         }
 
-        public Ellipse CreateEllipse(Point pointA, Point pointB, Color color)
+        private Ellipse Create(Ellipse ellipse, Point pointA, Point pointB, Color color)
         {
-            var ellipse = new Ellipse(pointA, pointB.X - pointA.X, pointB.Y - pointA.Y, color);
-            return ellipse;
+            return new Ellipse(pointA, pointB.X - pointA.X, pointB.Y - pointA.Y, color);
         }
 
-        public Rectangle CreateRectangle(Point pointA, Point pointB, Color color)
+        private Rectangle Create(Rectangle rectangle,Point pointA, Point pointB, Color color)
         {
-            var rectangle = new Rectangle(pointA, pointB.X - pointA.X, pointB.Y - pointA.Y, color);
-            return rectangle;
+            return new Rectangle(pointA, pointB.X - pointA.X, pointB.Y - pointA.Y, color);
         }
 
-        public Rhombus CreateRhombus(Point topLeftPoint, Point bottomRighеPoint, Color color)
+        private Rhombus Create(Rhombus rhombus, Point topLeftPoint, Point bottomRighеPoint, Color color)
         {
             var listPoint = GetPointsToRhombus(topLeftPoint, bottomRighеPoint);
-            var rhombus = new Rhombus(listPoint[0], listPoint[1],listPoint[2], listPoint[3], color);
-            return rhombus;
+            return new Rhombus(listPoint[0], listPoint[1], listPoint[2], listPoint[3], color);
         }
 
         private List<Point> GetPointsToRhombus(Point topLeftPoint, Point bottomRightPoint)
@@ -56,11 +46,10 @@ namespace Paint.Classes
             return listPoint;
         }
 
-        public Triangle CreateTriangle(Point topLeftPoint, Point bottomRightPoint, Color color)
+        private Triangle Create(Triangle triangle, Point topLeftPoint, Point bottomRightPoint, Color color)
         {
             var listPoint = GetPointsToTriangle(topLeftPoint, bottomRightPoint);
-            var triangle = new Triangle(listPoint[0], listPoint[1], listPoint[2], color);
-            return triangle;
+            return new Triangle(listPoint[0], listPoint[1], listPoint[2], color);
         }
 
         private List<Point> GetPointsToTriangle(Point topLeftPoint, Point bottomRightPoint)
@@ -76,20 +65,10 @@ namespace Paint.Classes
             return listPoint;
         }
 
-        public void SetColor(Panel panelColor)
+        public Shape CreatingShape(Shape shape, Point topLeftPoint, Point bottomRightPoint, Color color)
         {
-            var colorDialog = new ColorDialog();
-
-            if (colorDialog.ShowDialog() == DialogResult.OK)
-            {
-                panelColor.BackColor = colorDialog.Color;
-            }
-        }
-
-        public void CreatingShape(Shape shape)
-        {
-            dynamic ShapeToCreate = shape;
-            shape = Create(ShapeToCreate);
+            dynamic shapeToCreate = shape;
+            return Create(shapeToCreate, topLeftPoint, bottomRightPoint, color);
         }
     }
 }

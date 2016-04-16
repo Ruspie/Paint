@@ -16,6 +16,8 @@ namespace Paint.Classes.Figures
             this.SecondPoint = secondPoint;
             this.Color = color;
         }
+        
+        public Line() { }
 
         public Point FirstPoint { get; }
 
