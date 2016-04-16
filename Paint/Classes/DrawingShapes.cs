@@ -6,58 +6,61 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Paint.Classes.Figures;
+using Rectangle = Paint.Classes.Figures.Rectangle;
 
 namespace Paint.Classes
 {
     internal class DrawingShapes
     {
         private const int PenWidth = 2;
-        private readonly Graphics FormGraphics;
-        
+        private readonly Graphics _formGraphics;
+
         public DrawingShapes(Form formGraphics)
         {
-            FormGraphics = formGraphics.CreateGraphics();
+            _formGraphics = formGraphics.CreateGraphics();
         }
-        public void Draw(Ellipse ellipse)
+        private void Draw(Ellipse ellipse)
         {
             var penColor = new Pen(ellipse.Color, PenWidth);
-            FormGraphics.DrawEllipse(penColor, ellipse.CenterPoint.X, ellipse.CenterPoint.Y, ellipse.RadiusX, ellipse.RadiusY);
+            _formGraphics.DrawEllipse(penColor, ellipse.TopLeftPoint.X, ellipse.TopLeftPoint.Y, ellipse.Width, ellipse.Heigth);
         }
 
-        public void Draw(Figures.Rectangle rectangle)
+        private void Draw(Rectangle rectangle)
         {
             var penColor = new Pen(rectangle.Color, PenWidth);
-            FormGraphics.DrawLine(penColor, rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y, 
-                rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y + rectangle.Heigth);
-            FormGraphics.DrawLine(penColor, rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y,
-                rectangle.TopLeftPoint.X + rectangle.Width, rectangle.TopLeftPoint.Y);
-            FormGraphics.DrawLine(penColor, rectangle.TopLeftPoint.X + rectangle.Width, rectangle.TopLeftPoint.Y,
-                rectangle.TopLeftPoint.X + rectangle.Width, rectangle.TopLeftPoint.Y + rectangle.Heigth);
-            FormGraphics.DrawLine(penColor, rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y + rectangle.Heigth,
-                rectangle.TopLeftPoint.X + rectangle.Width, rectangle.TopLeftPoint.Y + rectangle.Heigth);
+            _formGraphics.DrawRectangle(penColor, rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y, rectangle.Width, rectangle.Heigth);
         }
 
-        public void Draw(Line line)
+        private void Draw(Rhombus rhombus)
+        {
+            var penColor = new Pen(rhombus.Color, PenWidth);
+            _formGraphics.DrawLine(penColor, rhombus.FirstPoint, rhombus.SecondPoint);
+            _formGraphics.DrawLine(penColor, rhombus.SecondPoint, rhombus.ThirdPoint);
+            _formGraphics.DrawLine(penColor, rhombus.ThirdPoint, rhombus.FourthPoint);
+            _formGraphics.DrawLine(penColor, rhombus.FourthPoint, rhombus.FirstPoint);
+        }
+
+        private void Draw(Line line)
         {
             var penColor = new Pen(line.Color, PenWidth);
-            FormGraphics.DrawLine(penColor, line.FirstPoint, line.SecondPoint);
+            _formGraphics.DrawLine(penColor, line.FirstPoint, line.SecondPoint);
         }
 
-        public void Draw(Polyline polyline)
+        private void Draw(Polyline polyline)
         {
             foreach (var line in polyline.Lines)
             {
                 var penColor = new Pen(line.Color, PenWidth);
-                FormGraphics.DrawLine(penColor, line.FirstPoint, line.SecondPoint);
+                _formGraphics.DrawLine(penColor, line.FirstPoint, line.SecondPoint);
             }
         }
 
-        public void Draw(Triangle triangle)
+        private void Draw(Triangle triangle)
         {
             var penColor = new Pen(triangle.Color, PenWidth);
-            FormGraphics.DrawLine(penColor, triangle.FirstPoint, triangle.SecondPoint);
-            FormGraphics.DrawLine(penColor, triangle.SecondPoint, triangle.ThirdPoint);
-            FormGraphics.DrawLine(penColor, triangle.FirstPoint, triangle.ThirdPoint);
+            _formGraphics.DrawLine(penColor, triangle.FirstPoint, triangle.SecondPoint);
+            _formGraphics.DrawLine(penColor, triangle.SecondPoint, triangle.ThirdPoint);
+            _formGraphics.DrawLine(penColor, triangle.ThirdPoint, triangle.FirstPoint);
         }
 
         public void DrawingListShape(List<Shape> listShape)
@@ -67,6 +70,12 @@ namespace Paint.Classes
                 dynamic shapeToDraw = shape;
                 Draw(shapeToDraw);
             }
+        }
+
+        public void DrawingShape(Shape shape)
+        {
+            dynamic shapeToDraw = shape;
+            Draw(shapeToDraw);
         }
     }
 }

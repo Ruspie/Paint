@@ -17,10 +17,10 @@ namespace Paint.Classes.Figures
             this.Color = color;
         }
 
-        public Point TopLeftPoint { get; }
+        public Point TopLeftPoint { get; set; }
 
-        public float Width { get; }
+        public float Width { get; set; }
 
-        public float Heigth { get; }
+        public float Heigth { get; set; }
     }
 }

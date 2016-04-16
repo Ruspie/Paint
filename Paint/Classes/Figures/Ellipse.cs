@@ -9,18 +9,18 @@ namespace Paint.Classes
 {
     internal class Ellipse: Shape
     {
-        public Ellipse(Point centerPoint, float radiusX, float radiusY, Color color)
+        public Ellipse(Point topLeftPoint, float width, float heigth, Color color)
         {
-            this.CenterPoint = centerPoint;
-            this.RadiusX = radiusX;
-            this.RadiusY = radiusY;
+            this.TopLeftPoint = topLeftPoint;
+            this.Width = width;
+            this.Heigth = heigth;
             this.Color = color;
         }
 
-        public Point CenterPoint { get; }
+        public Point TopLeftPoint { get; }
 
-        public float RadiusX { get; }
+        public float Width { get; }
 
-        public float RadiusY { get; }
+        public float Heigth { get; }
     }
 }
