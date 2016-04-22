@@ -9,20 +9,21 @@ namespace Paint.Classes.Figures
 {
     internal class Rectangle: Shape
     {
-        public Rectangle(Point topLeftPoint, float width, float heigth, Color color)
+        public Rectangle(Point topLeftPoint, int width, int heigth, Color color, int penWidth)
         {
             this.TopLeftPoint = topLeftPoint;
             this.Width = width;
             this.Heigth = heigth;
             this.Color = color;
+            this.PenWidth = penWidth;
         }
 
         public Rectangle() { }
 
         public Point TopLeftPoint { get; }
 
-        public float Width { get; }
+        public int Width { get; }
 
-        public float Heigth { get; }
+        public int Heigth { get; }
     }
 }

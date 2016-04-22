@@ -7,23 +7,22 @@ using System.Threading.Tasks;
 
 namespace Paint.Classes.Figures
 {
-    internal class Triangle: Shape
+    internal class BigPoint : Shape
     {
-        public Triangle(Point firstPoint, Point secondPoint, Point thirdPoint, Color color, int penWidth)
+        public BigPoint(Point firstPoint, Point secondPoint, Color color, int penWidth)
         {
             this.FirstPoint = firstPoint;
             this.SecondPoint = secondPoint;
-            this.ThirdPoint = thirdPoint;
             this.Color = color;
-            this.PenWidth = PenWidth;
+            this.PenWidth = penWidth;
         }
 
-        public Triangle() { }
+        public BigPoint()
+        {
+            
+        }
 
         public Point FirstPoint { get; }
-
         public Point SecondPoint { get; }
-
-        public Point ThirdPoint { get; }
     }
 }

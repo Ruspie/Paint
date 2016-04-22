@@ -1,34 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Paint.Classes.Ellipse">
-    <Position X="8.25" Y="2.25" Width="1.5" />
+    <Position X="6.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAgEAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Figures\Ellipse.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.Classes.Figures.Line">
-    <Position X="11" Y="2.25" Width="1.5" />
+    <Position X="8.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQABAAAAAAA=</HashCode>
       <FileName>Classes\Figures\Line.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.Classes.Figures.Polyline">
-    <Position X="5.5" Y="2.25" Width="1.5" />
+    <Position X="4.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Figures\Polyline.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Paint.Classes.Figures.Rectangle">
-    <Position X="2.75" Y="2.25" Width="1.5" />
+    <Position X="2.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAQEAAAAA=</HashCode>
+      <HashCode>AAgEAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Figures\Rectangle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Paint.Classes.Shape" Collapsed="true">
+  <Class Name="Paint.Classes.Shape">
     <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
@@ -38,15 +38,36 @@
   <Class Name="Paint.Classes.Figures.Triangle">
     <Position X="0.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAQABAAAAAAA=</HashCode>
       <FileName>Classes\Figures\Triangle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Paint.Classes.DrawingShapes" Collapsed="true">
-    <Position X="12.5" Y="0.75" Width="1.5" />
+  <Class Name="Paint.Classes.DrawingShapes">
+    <Position X="4.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAABAAAg=</HashCode>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAJAAAg=</HashCode>
       <FileName>Classes\DrawingShapes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Classes.Figures.Rhombus">
+    <Position X="10.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAQABAAAAAAA=</HashCode>
+      <FileName>Classes\Figures\Rhombus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Classes.CreatorShapes">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAEAAAAAAAAIAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\CreatorShapes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Classes.MouseController">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIBAAIAIAAAAAAAAAAgAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Classes\MouseController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
-namespace Paint.Classes
+namespace Paint.Classes.Figures
 {
-    abstract class Shape
+    internal abstract class Shape
     {
         public Color  Color { get; protected set;}
+        public int PenWidth { get; protected set; }
     }
 }

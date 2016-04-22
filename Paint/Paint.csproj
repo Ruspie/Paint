@@ -48,13 +48,14 @@
   <ItemGroup>
     <Compile Include="Classes\CreatorShapes.cs" />
     <Compile Include="Classes\DrawingShapes.cs" />
+    <Compile Include="Classes\Figures\BigPoint.cs" />
     <Compile Include="Classes\Figures\Ellipse.cs" />
     <Compile Include="Classes\Figures\Line.cs" />
-    <Compile Include="Classes\Figures\Polyline.cs" />
     <Compile Include="Classes\Figures\Rectangle.cs" />
     <Compile Include="Classes\Figures\Rhombus.cs" />
     <Compile Include="Classes\Figures\Shape.cs" />
     <Compile Include="Classes\Figures\Triangle.cs" />
+    <Compile Include="Classes\ListDrowedShapes.cs" />
     <Compile Include="Classes\MouseController.cs" />
     <Compile Include="PaintForm.cs">
       <SubType>Form</SubType>
@@ -75,6 +76,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">

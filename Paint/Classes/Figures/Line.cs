@@ -10,11 +10,12 @@ namespace Paint.Classes.Figures
 {
     internal class Line: Shape
     {
-        public Line(Point firstPoint, Point secondPoint, Color color)
+        public Line(Point firstPoint, Point secondPoint, Color color, int penWidth)
         {
             this.FirstPoint = firstPoint;
             this.SecondPoint = secondPoint;
             this.Color = color;
+            this.PenWidth = penWidth;
         }
         
         public Line() { }

@@ -8,29 +8,32 @@ using System.Windows.Forms;
 
 namespace Paint.Classes
 {
-    class MouseController
+    internal class MouseController
     {
         private Point _pointMouseDown;
         private Point _pointMouseUp;
+        public Point PointMouseLast { get; set; }
+        public bool IsCLick { get; private set; }
 
-        public void SetPointMouseDown(MouseEventArgs e)
+
+        public Point PointMouseDown
         {
-            _pointMouseDown = new Point(e.X, e.Y);
+            get { return _pointMouseDown; }
+            set
+            {
+                _pointMouseDown = value;
+                IsCLick = true;
+            }
         }
 
-        public void SetPointMouseUp(MouseEventArgs e)
+        public Point PointMouseUp
         {
-            _pointMouseUp = new Point(e.X, e.Y);
-        }
-
-        public Point GetPointMouseDown()
-        {
-            return _pointMouseDown;
-        }
-
-        public Point GetPointMouseUp()
-        {
-            return _pointMouseUp;
+            get { return _pointMouseUp; }
+            set
+            {
+                _pointMouseUp = value;
+                IsCLick = false;
+            }
         }
     }
 }

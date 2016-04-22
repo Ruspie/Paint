@@ -12,28 +12,41 @@ namespace Paint.Classes
 {
     internal class DrawingShapes
     {
-        private const int PenWidth = 2;
         private readonly Graphics _formGraphics;
 
-        public DrawingShapes(Form formGraphics)
+        public DrawingShapes(Form form)
         {
-            _formGraphics = formGraphics.CreateGraphics();
+            _formGraphics = form.CreateGraphics();
+        }
+
+        private void Draw(BigPoint bigPoint)
+        {
+            var pen = new Pen(bigPoint.Color, bigPoint.PenWidth);
+            _formGraphics.DrawLine(pen, bigPoint.FirstPoint.X, bigPoint.FirstPoint.Y, bigPoint.FirstPoint.X, bigPoint.FirstPoint.Y+bigPoint.PenWidth);
         }
         private void Draw(Ellipse ellipse)
         {
-            var penColor = new Pen(ellipse.Color, PenWidth);
-            _formGraphics.DrawEllipse(penColor, ellipse.TopLeftPoint.X, ellipse.TopLeftPoint.Y, ellipse.Width, ellipse.Heigth);
+            var penColor = new Pen(ellipse.Color, ellipse.PenWidth);
+            _formGraphics.DrawEllipse(penColor, ellipse.FirstPoint.X, ellipse.FirstPoint.Y, ellipse.Width, ellipse.Heigth);
         }
 
         private void Draw(Rectangle rectangle)
         {
-            var penColor = new Pen(rectangle.Color, PenWidth);
-            _formGraphics.DrawRectangle(penColor, rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y, rectangle.Width, rectangle.Heigth);
+            var penColor = new Pen(rectangle.Color, rectangle.PenWidth);
+            _formGraphics.DrawLine(penColor, rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y,
+                rectangle.TopLeftPoint.X + rectangle.Width, rectangle.TopLeftPoint.Y);
+            _formGraphics.DrawLine(penColor, rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y,
+                rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y + rectangle.Heigth);
+            _formGraphics.DrawLine(penColor, rectangle.TopLeftPoint.X + rectangle.Width, rectangle.TopLeftPoint.Y,
+                rectangle.TopLeftPoint.X + rectangle.Width, rectangle.TopLeftPoint.Y + rectangle.Heigth);
+            _formGraphics.DrawLine(penColor, rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y + rectangle.Heigth,
+                rectangle.TopLeftPoint.X + rectangle.Width, rectangle.TopLeftPoint.Y + rectangle.Heigth);
+            //_formGraphics.DrawRectangle(penColor, rectangle.TopLeftPoint.X, rectangle.TopLeftPoint.Y, rectangle.Width, rectangle.Heigth);
         }
 
         private void Draw(Rhombus rhombus)
         {
-            var penColor = new Pen(rhombus.Color, PenWidth);
+            var penColor = new Pen(rhombus.Color, rhombus.PenWidth);
             _formGraphics.DrawLine(penColor, rhombus.FirstPoint, rhombus.SecondPoint);
             _formGraphics.DrawLine(penColor, rhombus.SecondPoint, rhombus.ThirdPoint);
             _formGraphics.DrawLine(penColor, rhombus.ThirdPoint, rhombus.FourthPoint);
@@ -42,22 +55,13 @@ namespace Paint.Classes
 
         private void Draw(Line line)
         {
-            var penColor = new Pen(line.Color, PenWidth);
+            var penColor = new Pen(line.Color, line.PenWidth);
             _formGraphics.DrawLine(penColor, line.FirstPoint, line.SecondPoint);
-        }
-
-        private void Draw(Polyline polyline)
-        {
-            foreach (var line in polyline.Lines)
-            {
-                var penColor = new Pen(line.Color, PenWidth);
-                _formGraphics.DrawLine(penColor, line.FirstPoint, line.SecondPoint);
-            }
         }
 
         private void Draw(Triangle triangle)
         {
-            var penColor = new Pen(triangle.Color, PenWidth);
+            var penColor = new Pen(triangle.Color, triangle.PenWidth);
             _formGraphics.DrawLine(penColor, triangle.FirstPoint, triangle.SecondPoint);
             _formGraphics.DrawLine(penColor, triangle.SecondPoint, triangle.ThirdPoint);
             _formGraphics.DrawLine(penColor, triangle.ThirdPoint, triangle.FirstPoint);
@@ -76,6 +80,11 @@ namespace Paint.Classes
         {
             dynamic shapeToDraw = shape;
             Draw(shapeToDraw);
+        }
+
+        public void ClearField(Form form)
+        {
+            _formGraphics.Clear(form.BackColor);
         }
     }
 }

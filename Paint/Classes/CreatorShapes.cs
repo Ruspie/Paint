@@ -12,25 +12,30 @@ namespace Paint.Classes
 {
     class CreatorShapes
     {
-        private Line Create(Line line, Point pointA, Point pointB, Color color)
+        private Line Create(Line line, Point firstPoint, Point secondPoint, Color color, int penWidth)
         {
-            return new Line(pointA, pointB, color);
+            return new Line(firstPoint, secondPoint, color, penWidth);
         }
 
-        private Ellipse Create(Ellipse ellipse, Point pointA, Point pointB, Color color)
+        private BigPoint Create(BigPoint bigPoint, Point firstPoint, Point secondPoint, Color color, int penWidth)
         {
-            return new Ellipse(pointA, pointB.X - pointA.X, pointB.Y - pointA.Y, color);
+            return new BigPoint(firstPoint, secondPoint, color, penWidth);
         }
 
-        private Rectangle Create(Rectangle rectangle,Point pointA, Point pointB, Color color)
+        private Ellipse Create(Ellipse ellipse, Point firstPoint, Point secondPoint, Color color, int penWidth)
         {
-            return new Rectangle(pointA, pointB.X - pointA.X, pointB.Y - pointA.Y, color);
+            return new Ellipse(firstPoint, secondPoint.X - firstPoint.X, secondPoint.Y - firstPoint.Y, color, penWidth);
         }
 
-        private Rhombus Create(Rhombus rhombus, Point topLeftPoint, Point bottomRighеPoint, Color color)
+        private Rectangle Create(Rectangle rectangle, Point firstPoint, Point secondPoint, Color color, int penWidth)
         {
-            var listPoint = GetPointsToRhombus(topLeftPoint, bottomRighеPoint);
-            return new Rhombus(listPoint[0], listPoint[1], listPoint[2], listPoint[3], color);
+            return new Rectangle(firstPoint, secondPoint.X - firstPoint.X, secondPoint.Y - firstPoint.Y, color, penWidth);
+        }
+
+        private Rhombus Create(Rhombus rhombus, Point firstPoint, Point secondPoint, Color color, int penWidth)
+        {
+            var listPoint = GetPointsToRhombus(firstPoint, secondPoint);
+            return new Rhombus(listPoint[0], listPoint[1], listPoint[2], listPoint[3], color, penWidth);
         }
 
         private List<Point> GetPointsToRhombus(Point topLeftPoint, Point bottomRightPoint)
@@ -46,10 +51,10 @@ namespace Paint.Classes
             return listPoint;
         }
 
-        private Triangle Create(Triangle triangle, Point topLeftPoint, Point bottomRightPoint, Color color)
+        private Triangle Create(Triangle triangle, Point firstPoint, Point secondPoint, Color color, int penWidth)
         {
-            var listPoint = GetPointsToTriangle(topLeftPoint, bottomRightPoint);
-            return new Triangle(listPoint[0], listPoint[1], listPoint[2], color);
+            var listPoint = GetPointsToTriangle(firstPoint, secondPoint);
+            return new Triangle(listPoint[0], listPoint[1], listPoint[2], color, penWidth);
         }
 
         private List<Point> GetPointsToTriangle(Point topLeftPoint, Point bottomRightPoint)
@@ -65,10 +70,10 @@ namespace Paint.Classes
             return listPoint;
         }
 
-        public Shape CreatingShape(Shape shape, Point topLeftPoint, Point bottomRightPoint, Color color)
+        public Shape CreatingShape(Shape shape, Point topLeftPoint, Point bottomRightPoint, Color color, int penWidth)
         {
             dynamic shapeToCreate = shape;
-            return Create(shapeToCreate, topLeftPoint, bottomRightPoint, color);
+            return Create(shapeToCreate, topLeftPoint, bottomRightPoint, color, penWidth);
         }
     }
 }

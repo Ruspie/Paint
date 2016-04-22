@@ -29,27 +29,36 @@
         private void InitializeComponent()
         {
             this.groupBoxSettings = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelSize = new System.Windows.Forms.Label();
+            this.buttonSizeUp = new System.Windows.Forms.Button();
+            this.labelSizeText = new System.Windows.Forms.Label();
+            this.buttonSizeDown = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.groupBoxColor = new System.Windows.Forms.GroupBox();
             this.panelColor = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonTriangle = new System.Windows.Forms.Button();
             this.buttonRhombus = new System.Windows.Forms.Button();
             this.buttonRectangle = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonPoint = new System.Windows.Forms.Button();
             this.buttonLine = new System.Windows.Forms.Button();
             this.buttonEllipse = new System.Windows.Forms.Button();
             this.groupBoxSettings.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBoxColor.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxSettings
             // 
             this.groupBoxSettings.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBoxSettings.Controls.Add(this.groupBox1);
+            this.groupBoxSettings.Controls.Add(this.buttonClear);
             this.groupBoxSettings.Controls.Add(this.groupBoxColor);
             this.groupBoxSettings.Controls.Add(this.buttonTriangle);
             this.groupBoxSettings.Controls.Add(this.buttonRhombus);
             this.groupBoxSettings.Controls.Add(this.buttonRectangle);
-            this.groupBoxSettings.Controls.Add(this.button3);
+            this.groupBoxSettings.Controls.Add(this.buttonPoint);
             this.groupBoxSettings.Controls.Add(this.buttonLine);
             this.groupBoxSettings.Controls.Add(this.buttonEllipse);
             this.groupBoxSettings.Location = new System.Drawing.Point(-1, 0);
@@ -58,6 +67,66 @@
             this.groupBoxSettings.TabIndex = 2;
             this.groupBoxSettings.TabStop = false;
             this.groupBoxSettings.Text = "Settings";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.labelSize);
+            this.groupBox1.Controls.Add(this.buttonSizeUp);
+            this.groupBox1.Controls.Add(this.labelSizeText);
+            this.groupBox1.Controls.Add(this.buttonSizeDown);
+            this.groupBox1.Location = new System.Drawing.Point(13, 244);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(105, 100);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            // 
+            // labelSize
+            // 
+            this.labelSize.AutoSize = true;
+            this.labelSize.Location = new System.Drawing.Point(53, 16);
+            this.labelSize.Name = "labelSize";
+            this.labelSize.Size = new System.Drawing.Size(13, 13);
+            this.labelSize.TabIndex = 12;
+            this.labelSize.Text = "2";
+            // 
+            // buttonSizeUp
+            // 
+            this.buttonSizeUp.Location = new System.Drawing.Point(25, 41);
+            this.buttonSizeUp.Name = "buttonSizeUp";
+            this.buttonSizeUp.Size = new System.Drawing.Size(56, 23);
+            this.buttonSizeUp.TabIndex = 11;
+            this.buttonSizeUp.Text = "UP";
+            this.buttonSizeUp.UseVisualStyleBackColor = true;
+            this.buttonSizeUp.Click += new System.EventHandler(this.buttonSizeUp_Click);
+            // 
+            // labelSizeText
+            // 
+            this.labelSizeText.AutoSize = true;
+            this.labelSizeText.Location = new System.Drawing.Point(10, 16);
+            this.labelSizeText.Name = "labelSizeText";
+            this.labelSizeText.Size = new System.Drawing.Size(27, 13);
+            this.labelSizeText.TabIndex = 6;
+            this.labelSizeText.Text = "Size";
+            // 
+            // buttonSizeDown
+            // 
+            this.buttonSizeDown.Location = new System.Drawing.Point(25, 70);
+            this.buttonSizeDown.Name = "buttonSizeDown";
+            this.buttonSizeDown.Size = new System.Drawing.Size(56, 23);
+            this.buttonSizeDown.TabIndex = 10;
+            this.buttonSizeDown.Text = "DOWN";
+            this.buttonSizeDown.UseVisualStyleBackColor = true;
+            this.buttonSizeDown.Click += new System.EventHandler(this.buttonSizeDown_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(13, 546);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(105, 23);
+            this.buttonClear.TabIndex = 9;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // groupBoxColor
             // 
@@ -73,16 +142,16 @@
             // 
             this.panelColor.BackColor = System.Drawing.Color.Black;
             this.panelColor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelColor.Location = new System.Drawing.Point(54, 9);
+            this.panelColor.Location = new System.Drawing.Point(56, 12);
             this.panelColor.Name = "panelColor";
-            this.panelColor.Size = new System.Drawing.Size(30, 30);
+            this.panelColor.Size = new System.Drawing.Size(25, 25);
             this.panelColor.TabIndex = 7;
             this.panelColor.Click += new System.EventHandler(this.panelColor_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 17);
+            this.label1.Location = new System.Drawing.Point(10, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 6;
@@ -118,14 +187,15 @@
             this.buttonRectangle.UseVisualStyleBackColor = true;
             this.buttonRectangle.Click += new System.EventHandler(this.buttonRectangle_Click);
             // 
-            // button3
+            // buttonPoint
             // 
-            this.button3.Location = new System.Drawing.Point(13, 48);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Polyline";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonPoint.Location = new System.Drawing.Point(13, 48);
+            this.buttonPoint.Name = "buttonPoint";
+            this.buttonPoint.Size = new System.Drawing.Size(105, 23);
+            this.buttonPoint.TabIndex = 2;
+            this.buttonPoint.Text = "Point";
+            this.buttonPoint.UseVisualStyleBackColor = true;
+            this.buttonPoint.Click += new System.EventHandler(this.buttonPoint_Click);
             // 
             // buttonLine
             // 
@@ -159,7 +229,10 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PaintForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PaintForm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PaintForm_MouseUp);
+            this.Move += new System.EventHandler(this.PaintForm_Move);
             this.groupBoxSettings.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBoxColor.ResumeLayout(false);
             this.groupBoxColor.PerformLayout();
             this.ResumeLayout(false);
@@ -172,12 +245,18 @@
         private System.Windows.Forms.Button buttonLine;
         private System.Windows.Forms.Button buttonEllipse;
         private System.Windows.Forms.Button buttonRectangle;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonPoint;
         private System.Windows.Forms.Button buttonTriangle;
         private System.Windows.Forms.Button buttonRhombus;
         private System.Windows.Forms.Panel panelColor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBoxColor;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label labelSize;
+        private System.Windows.Forms.Button buttonSizeUp;
+        private System.Windows.Forms.Label labelSizeText;
+        private System.Windows.Forms.Button buttonSizeDown;
     }
 }
 

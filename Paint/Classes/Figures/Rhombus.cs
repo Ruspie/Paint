@@ -9,13 +9,14 @@ namespace Paint.Classes.Figures
 {
     internal class Rhombus: Shape
     {
-        public Rhombus(Point firstPoint, Point secondPoint, Point thirdPoint, Point fourthPoint, Color color)
+        public Rhombus(Point firstPoint, Point secondPoint, Point thirdPoint, Point fourthPoint, Color color, int penWidth)
         {
             this.Color = color;
             this.FirstPoint = firstPoint;
             this.SecondPoint = secondPoint;
             this.ThirdPoint = thirdPoint;
             this.FourthPoint = fourthPoint;
+            this.PenWidth = penWidth;
         }
 
         public Rhombus() { }
