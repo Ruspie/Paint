@@ -9,10 +9,9 @@ namespace Paint.Classes.Figures
 {
     internal class BigPoint : Shape
     {
-        public BigPoint(Point firstPoint, Point secondPoint, Color color, int penWidth)
+        public BigPoint(Point firstPoint, Color color, int penWidth)
         {
             this.FirstPoint = firstPoint;
-            this.SecondPoint = secondPoint;
             this.Color = color;
             this.PenWidth = penWidth;
         }
@@ -23,6 +22,5 @@ namespace Paint.Classes.Figures
         }
 
         public Point FirstPoint { get; }
-        public Point SecondPoint { get; }
     }
 }

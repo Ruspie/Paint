@@ -10,7 +10,7 @@ using Rectangle = Paint.Classes.Figures.Rectangle;
 
 namespace Paint.Classes
 {
-    class CreatorShapes
+    internal class CreatorShapes
     {
         private Line Create(Line line, Point firstPoint, Point secondPoint, Color color, int penWidth)
         {
@@ -19,7 +19,7 @@ namespace Paint.Classes
 
         private BigPoint Create(BigPoint bigPoint, Point firstPoint, Point secondPoint, Color color, int penWidth)
         {
-            return new BigPoint(firstPoint, secondPoint, color, penWidth);
+            return new BigPoint(secondPoint, color, penWidth);
         }
 
         private Ellipse Create(Ellipse ellipse, Point firstPoint, Point secondPoint, Color color, int penWidth)

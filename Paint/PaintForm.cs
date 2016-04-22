@@ -132,5 +132,11 @@ namespace Paint
             var drawingShapes = new DrawingShapes(Form.ActiveForm);
             drawingShapes.DrawingListShape(_listDrowedShapes.ShapesList);
         }
+
+        private void PaintForm_ClientSizeChanged(object sender, EventArgs e)
+        {
+            var drawingShapes = new DrawingShapes(Form.ActiveForm);
+            drawingShapes.DrawingListShape(_listDrowedShapes.ShapesList);
+        }
     }
 }

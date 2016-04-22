@@ -226,6 +226,7 @@
             this.Controls.Add(this.groupBoxSettings);
             this.Name = "PaintForm";
             this.Text = "Бегун А.С. гр.451001";
+            this.ClientSizeChanged += new System.EventHandler(this.PaintForm_ClientSizeChanged);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PaintForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PaintForm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PaintForm_MouseUp);
