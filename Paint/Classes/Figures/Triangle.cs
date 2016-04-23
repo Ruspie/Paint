@@ -15,7 +15,7 @@ namespace Paint.Classes.Figures
             this.SecondPoint = secondPoint;
             this.ThirdPoint = thirdPoint;
             this.Color = color;
-            this.PenWidth = PenWidth;
+            this.PenWidth = penWidth;
         }
 
         public Triangle() { }

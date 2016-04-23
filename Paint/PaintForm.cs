@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Paint.Classes;
 using Paint.Classes.Figures;
@@ -31,11 +24,13 @@ namespace Paint
 
         private void PaintForm_MouseUp(object sender, MouseEventArgs e)
         {
+            var drawingShapes = new DrawingShapes(Form.ActiveForm);
+
             _mouseController.PointMouseUp= e.Location;
             _shapeToDraw = _creatorShapes.CreatingShape(_shapeToDraw, _mouseController.PointMouseDown,
                 _mouseController.PointMouseUp, panelColor.BackColor, int.Parse(labelSize.Text));
-            var drawingShapes = new DrawingShapes(Form.ActiveForm);
             drawingShapes.DrawingShape(_shapeToDraw);
+
             _listDrowedShapes.ShapesList.Add(_shapeToDraw);
         }
 
@@ -57,7 +52,7 @@ namespace Paint
 
         private void buttonPoint_Click(object sender, EventArgs e)
         {
-            _shapeToDraw = _creatorShapes.CreatingShape(new BigPoint(), _mouseController.PointMouseDown,
+            _shapeToDraw = _creatorShapes.CreatingShape(new BigPoint(), _mouseController.PointMouseDown,  
                 _mouseController.PointMouseUp, panelColor.BackColor, int.Parse(labelSize.Text));
         }
 
@@ -90,16 +85,17 @@ namespace Paint
             if (_mouseController.IsCLick)
             {
                 var drawingShapes = new DrawingShapes(Form.ActiveForm);
+
                 _shapeToDraw = _creatorShapes.CreatingShape(_shapeToDraw, _mouseController.PointMouseDown,
-                    _mouseController.PointMouseLast, this.BackColor, int.Parse(labelSize.Text));
+                    _mouseController.PointMouseLast, this.BackColor, int.Parse(labelSize.Text));            //create and draw shape with Control color
                 drawingShapes.DrawingShape(_shapeToDraw);
 
                 _shapeToDraw = _creatorShapes.CreatingShape(_shapeToDraw, _mouseController.PointMouseDown,
-                    e.Location, panelColor.BackColor, int.Parse(labelSize.Text));
+                    e.Location, panelColor.BackColor, int.Parse(labelSize.Text));                           //create and draw shape with color (panelColor)
                 drawingShapes.DrawingShape(_shapeToDraw);
 
                 _mouseController.PointMouseLast = e.Location;
-                drawingShapes.DrawingListShape(_listDrowedShapes.ShapesList);
+                drawingShapes.DrawingListShape(_listDrowedShapes.ShapesList);                               //draw full list shape
             }
             else
             {
@@ -111,8 +107,7 @@ namespace Paint
         {
             _listDrowedShapes.ShapesList.Clear();
             var drawingShapes = new DrawingShapes(Form.ActiveForm);
-            drawingShapes.ClearField(Form.ActiveForm); 
-           
+            drawingShapes.ClearField(Form.ActiveForm);  
         }
 
         private void buttonSizeUp_Click(object sender, EventArgs e)

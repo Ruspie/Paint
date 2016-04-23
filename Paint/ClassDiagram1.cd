@@ -3,7 +3,7 @@
   <Class Name="Paint.Classes.Ellipse">
     <Position X="6.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAgEAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAEAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Classes\Figures\Ellipse.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -14,13 +14,6 @@
       <FileName>Classes\Figures\Line.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Paint.Classes.Figures.Polyline">
-    <Position X="4.5" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\Figures\Polyline.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Paint.Classes.Figures.Rectangle">
     <Position X="2.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
@@ -28,10 +21,10 @@
       <FileName>Classes\Figures\Rectangle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Paint.Classes.Shape">
+  <Class Name="Paint.Classes.Figures.Shape">
     <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAg=</HashCode>
       <FileName>Classes\Figures\Shape.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,7 +38,7 @@
   <Class Name="Paint.Classes.DrawingShapes">
     <Position X="4.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAJAAAg=</HashCode>
+      <HashCode>AAAAAAAAAAABAgAAAAAAAAIAAAAAAAAAAAAAAAJAAAA=</HashCode>
       <FileName>Classes\DrawingShapes.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,8 +59,22 @@
   <Class Name="Paint.Classes.MouseController">
     <Position X="2.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIBAAIAIAAAAAAAAAAgAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAQAAgEAAIAI=</HashCode>
       <FileName>Classes\MouseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Classes.Figures.BigPoint">
+    <Position X="4.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Classes\Figures\BigPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paint.Classes.ListDrowedShapes">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Classes\ListDrowedShapes.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
